@@ -2,7 +2,9 @@ plugins { // (1)
     id 'org.springframework.boot' version '2.4.1' // RELEASE 삭제
     id 'io.spring.dependency-management' version '1.0.10.RELEASE'
     id 'java'
+    id 'java-library'
 }
+
 
 group 'com.jojoldu.book'
 version '1.0.4-SNAPSHOT-'+new Date().format("yyyyMMddHHmmss")
@@ -18,6 +20,8 @@ test {
     useJUnitPlatform()
 }
 
+apply plugin: 'java-library'
+
 dependencies {
     //(3)
     implementation('org.springframework.boot:spring-boot-starter-web')
@@ -31,6 +35,7 @@ dependencies {
 
     //spring boot용 Spring Data JPA추상화 라이브러리, spring boot 버전에 맞춰 JPA관련 버전관리
     implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+    //api 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation("org.mariadb.jdbc:mariadb-java-client")
     //인메모리 관계형 데이터베이스, 별도 설치없이 Project의 의존성만으로 관리
     implementation('com.h2database:h2')
