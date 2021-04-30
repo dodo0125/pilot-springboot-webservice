@@ -1,0 +1,22 @@
+{{>layout/header}}
+<h1>고객정보 등록</h1>
+
+<div class = "col-md-12">
+    <div class = "col-md-4">
+        <form>
+            <div class = "form-group">
+                <label for = "customername">고객명</label>
+                <input type = "text" class = "form-control"
+                       id = "customername" placeholder="고객명">
+            </div>
+            <div class= "form-group">
+                <label for ="age">나이</label>
+                <input type = "number" class = "form-control"
+                       id = "age" placeholder="나이">
+            </div>
+        </form>
+        <a href = "/" role="button" class = "btn btn-secondary">취소</a>
+        <button type = "button" class="btn btn-primary" id = "btn-save">등록</button>
+    </div>
+</div>
+{{>layout/footer}}

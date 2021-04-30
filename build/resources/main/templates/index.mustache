@@ -1,0 +1,32 @@
+{{>layout/header}}
+<h1>스프링 부트로 시작하는 웹서비스</h1>
+    <div class = "col-mid-12">
+        <div class = "row">
+            <div class = "col-md-6">
+                <a href = "/customer/save" role="button" class = "btn btn-primary">고객 등록</a>
+            </div>
+        </div>
+        <br>
+        <!-- 목록 출력 영역 -->
+        <table class = "table table-horizontal table-bordered">
+            <thead class = "thead-strong">
+            <tr>
+                <th>고객ID</th>
+                <th>고객명</th>
+                <th>나이</th>
+                <th>최종수정일</th>
+            </tr>
+            </thead>
+            <tbody id ="tbody">
+            {{#customer}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td><a href = "/customer/update/{{id}}">{{customername}}</a></td>
+                    <td>{{age}}</td>
+                    <td>{{modifiedDate}}</td>
+                </tr>
+            {{/customer}}
+            </tbody>
+        </table>
+    </div>
+{{>layout/footer}}

@@ -1,0 +1,6 @@
+com/mini/pilot/springboot/web/CustomerApiControllerTest.java
+ com.mini.pilot.springboot.web.CustomerApiControllerTest
+com/mini/pilot/springboot/web/IndexControllerTest.java
+ com.mini.pilot.springboot.web.IndexControllerTest
+com/mini/pilot/springboot/domain/customer/CustomerRepositoryTest.java
+ com.mini.pilot.springboot.domain.customer.CustomerRepositoryTest
