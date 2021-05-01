@@ -21,5 +21,24 @@ com/mini/pilot/springboot/service/CustomerService.java
  com.mini.pilot.springboot.service.CustomerService
 com/mini/pilot/springboot/web/CustomerApiController.java
  com.mini.pilot.springboot.web.CustomerApiController
+com/mini/pilot/springboot/web/SktserviceApiController.java
+ com.mini.pilot.springboot.web.SktserviceApiController
+com/mini/pilot/springboot/web/dto/SktserviceSaveRequestDto.java
+ com.mini.pilot.springboot.web.dto.SktserviceSaveRequestDto
+ com.mini.pilot.springboot.web.dto.SktserviceSaveRequestDto$SktserviceSaveRequestDtoBuilder
+com/mini/pilot/springboot/domain/sktservice/Sktservice.java
+ com.mini.pilot.springboot.domain.sktservice.Sktservice
+ com.mini.pilot.springboot.domain.sktservice.Sktservice$SktserviceBuilder
+com/mini/pilot/springboot/web/dto/SktserviceResponseDto.java
+ com.mini.pilot.springboot.web.dto.SktserviceResponseDto
+com/mini/pilot/springboot/web/dto/SktserviceListResponseDto.java
+ com.mini.pilot.springboot.web.dto.SktserviceListResponseDto
+com/mini/pilot/springboot/service/SktserviceService.java
+ com.mini.pilot.springboot.service.SktserviceService
+com/mini/pilot/springboot/domain/sktservice/SktserviceRepository.java
+ com.mini.pilot.springboot.domain.sktservice.SktserviceRepository
+com/mini/pilot/springboot/web/dto/SktserviceUpdateRequestDto.java
+ com.mini.pilot.springboot.web.dto.SktserviceUpdateRequestDto
+ com.mini.pilot.springboot.web.dto.SktserviceUpdateRequestDto$SktserviceUpdateRequestDtoBuilder
 com/mini/pilot/springboot/web/IndexController.java
  com.mini.pilot.springboot.web.IndexController

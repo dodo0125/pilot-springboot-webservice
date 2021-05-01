@@ -12,6 +12,21 @@ var main = {
         $('#btn-delete').on('click', function () {
             _this.delete();
         });
+
+
+
+
+        $('#btn-save-service').on('click', function () {
+             _this.saveService();
+        });
+        $('#btn-update-service').on('click', function () {
+             _this.updateService();
+        });
+        $('#btn-delete-service').on('click', function () {
+             _this.deleteService();
+        });
+
+
     },
     save : function () {
         var data = {
@@ -67,6 +82,61 @@ var main = {
         }).fail(function (error) {
             alert(JSON.stringify(error));
         });
+    },
+    saveService : function () {
+            var data = {
+                svcnum: $('#svcnum').val(),
+                customerid: $('#customerid').val()
+            };
+
+            $.ajax({
+                type: 'POST',
+                url: '/api/v1/sktservice',
+                dataType: 'json',
+                contentType:'application/json; charset=utf-8',
+                data: JSON.stringify(data)
+            }).done(function() {
+                alert('서비스정보가 등록되었습니다.');
+                window.location.href = '/';
+            }).fail(function (error) {
+                alert(JSON.stringify(error));
+            });
+    },
+    updateService : function () {
+            var data = {
+                svcnum: $('#svcnum').val(),
+                customerid: $('#customerid').val()
+            };
+
+            var id = $('#id').val();
+
+            $.ajax({
+                type: 'PUT',
+                url: '/api/v1/sktservice/'+id,
+                dataType: 'json',
+                contentType:'application/json; charset=utf-8',
+                data: JSON.stringify(data)
+            }).done(function() {
+                alert('서비스정보가 수정되었습니다.');
+                window.location.href = '/';
+            }).fail(function (error) {
+                alert(JSON.stringify(error));
+            });
+    },
+    deleteService : function () {
+            var id = $('#id').val();
+
+            $.ajax({
+                type: 'DELETE',
+                url: '/api/v1/sktservice/'+id,
+                dataType: 'json',
+                contentType:'application/json; charset=utf-8'
+            }).done(function() {
+                alert('서비스정보가 삭제되었습니다.');
+                window.location.href = '/';
+            }).fail(function (error) {
+                alert(JSON.stringify(error));
+            });
     }
 
 };
