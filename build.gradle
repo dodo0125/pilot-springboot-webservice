@@ -1,9 +1,23 @@
+//querydsl 적용을 위해 추가 buildscript
+buildscript {
+    ext {
+        querydslPluginVersion = '1.0.10' // 플러그인 버전
+    }
+    repositories {
+        maven { url "https://plugins.gradle.org/m2/" } // 플러그인 저장소
+    }
+    dependencies {
+        classpath("gradle.plugin.com.ewerk.gradle.plugins:querydsl-plugin:${querydslPluginVersion}") // querydsl 플러그인 의존성 등록
+    }
+}
+
 plugins { // (1)
     id 'org.springframework.boot' version '2.4.1' // RELEASE 삭제
     id 'io.spring.dependency-management' version '1.0.10.RELEASE'
     id 'java'
     id 'java-library'
 }
+
 
 
 group 'com.jojoldu.book'
@@ -21,6 +35,7 @@ test {
 }
 
 apply plugin: 'java-library'
+apply plugin: "io.spring.dependency-management" //querydsl 적용을 위해 추가
 
 dependencies {
     //(3)
@@ -42,4 +57,26 @@ dependencies {
 
 
     testImplementation('org.springframework.boot:spring-boot-starter-test')
+
+    //아래 코드들은 querydsl 적용을 위해 추가
+    compile("com.querydsl:querydsl-core") // querydsl
+    compile("com.querydsl:querydsl-jpa") // querydsl
+    annotationProcessor "com.querydsl:querydsl-apt:${dependencyManagement.importedProperties['querydsl.version']}:jpa" // querydsl JPAAnnotationProcessor 사용 지정
+    annotationProcessor("jakarta.persistence:jakarta.persistence-api")
+    annotationProcessor("jakarta.annotation:jakarta.annotation-api")
+
+}
+
+//querydsl 적용을 위해 추가
+def generated='src/main/generated'
+sourceSets {
+    main.java.srcDirs += [ generated ]
+}
+
+tasks.withType(JavaCompile) {
+    options.annotationProcessorGeneratedSourcesDirectory = file(generated)
+}
+
+clean.doLast {
+    file(generated).deleteDir()
 }

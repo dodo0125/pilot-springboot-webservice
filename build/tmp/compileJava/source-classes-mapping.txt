@@ -1,31 +1,25 @@
-com/mini/pilot/springboot/web/dto/CustomerListResponseDto.java
- com.mini.pilot.springboot.web.dto.CustomerListResponseDto
-com/mini/pilot/springboot/Application.java
- com.mini.pilot.springboot.Application
-com/mini/pilot/springboot/web/dto/CustomerUpdateRequestDto.java
- com.mini.pilot.springboot.web.dto.CustomerUpdateRequestDto
- com.mini.pilot.springboot.web.dto.CustomerUpdateRequestDto$CustomerUpdateRequestDtoBuilder
-com/mini/pilot/springboot/domain/customer/Customer.java
- com.mini.pilot.springboot.domain.customer.Customer
- com.mini.pilot.springboot.domain.customer.Customer$CustomerBuilder
-com/mini/pilot/springboot/web/dto/CustomerSaveRequestDto.java
- com.mini.pilot.springboot.web.dto.CustomerSaveRequestDto
- com.mini.pilot.springboot.web.dto.CustomerSaveRequestDto$CustomerSaveRequestDtoBuilder
-com/mini/pilot/springboot/web/dto/CustomerResponseDto.java
- com.mini.pilot.springboot.web.dto.CustomerResponseDto
-com/mini/pilot/springboot/domain/BaseTimeEntity.java
- com.mini.pilot.springboot.domain.BaseTimeEntity
-com/mini/pilot/springboot/domain/customer/CustomerRepository.java
- com.mini.pilot.springboot.domain.customer.CustomerRepository
-com/mini/pilot/springboot/service/CustomerService.java
- com.mini.pilot.springboot.service.CustomerService
-com/mini/pilot/springboot/web/CustomerApiController.java
- com.mini.pilot.springboot.web.CustomerApiController
-com/mini/pilot/springboot/web/SktserviceApiController.java
- com.mini.pilot.springboot.web.SktserviceApiController
 com/mini/pilot/springboot/web/dto/SktserviceSaveRequestDto.java
  com.mini.pilot.springboot.web.dto.SktserviceSaveRequestDto
  com.mini.pilot.springboot.web.dto.SktserviceSaveRequestDto$SktserviceSaveRequestDtoBuilder
+com/mini/pilot/springboot/web/dto/CustomerInfoListResponseDto.java
+ com.mini.pilot.springboot.web.dto.CustomerInfoListResponseDto
+com/mini/pilot/springboot/web/dto/CustomerUpdateRequestDto.java
+ com.mini.pilot.springboot.web.dto.CustomerUpdateRequestDto
+ com.mini.pilot.springboot.web.dto.CustomerUpdateRequestDto$CustomerUpdateRequestDtoBuilder
+com/mini/pilot/springboot/web/dto/CustomerSaveRequestDto.java
+ com.mini.pilot.springboot.web.dto.CustomerSaveRequestDto
+ com.mini.pilot.springboot.web.dto.CustomerSaveRequestDto$CustomerSaveRequestDtoBuilder
+com/mini/pilot/springboot/domain/customer/Customer.java
+ com.mini.pilot.springboot.domain.customer.Customer
+ com.mini.pilot.springboot.domain.customer.Customer$CustomerBuilder
+com/mini/pilot/springboot/Application.java
+ com.mini.pilot.springboot.Application
+com/mini/pilot/springboot/domain/sktservice/QSktservice.java
+ com.mini.pilot.springboot.domain.sktservice.QSktservice
+com/mini/pilot/springboot/web/dto/CustomerResponseDto.java
+ com.mini.pilot.springboot.web.dto.CustomerResponseDto
+com/mini/pilot/springboot/web/CustomerApiController.java
+ com.mini.pilot.springboot.web.CustomerApiController
 com/mini/pilot/springboot/domain/sktservice/Sktservice.java
  com.mini.pilot.springboot.domain.sktservice.Sktservice
  com.mini.pilot.springboot.domain.sktservice.Sktservice$SktserviceBuilder
@@ -35,10 +29,30 @@ com/mini/pilot/springboot/web/dto/SktserviceListResponseDto.java
  com.mini.pilot.springboot.web.dto.SktserviceListResponseDto
 com/mini/pilot/springboot/service/SktserviceService.java
  com.mini.pilot.springboot.service.SktserviceService
+com/mini/pilot/springboot/domain/customer/CustomerRepository.java
+ com.mini.pilot.springboot.domain.customer.CustomerRepository
+com/mini/pilot/springboot/service/CustomerService.java
+ com.mini.pilot.springboot.service.CustomerService
+com/mini/pilot/springboot/domain/BaseTimeEntity.java
+ com.mini.pilot.springboot.domain.BaseTimeEntity
+com/mini/pilot/springboot/domain/customer/Customerinfo.java
+ com.mini.pilot.springboot.domain.customer.Customerinfo
 com/mini/pilot/springboot/domain/sktservice/SktserviceRepository.java
  com.mini.pilot.springboot.domain.sktservice.SktserviceRepository
 com/mini/pilot/springboot/web/dto/SktserviceUpdateRequestDto.java
  com.mini.pilot.springboot.web.dto.SktserviceUpdateRequestDto
  com.mini.pilot.springboot.web.dto.SktserviceUpdateRequestDto$SktserviceUpdateRequestDtoBuilder
+com/mini/pilot/springboot/domain/customer/QCustomer.java
+ com.mini.pilot.springboot.domain.customer.QCustomer
+com/mini/pilot/springboot/domain/customer/CustomerQueryRepository.java
+ com.mini.pilot.springboot.domain.customer.CustomerQueryRepository
+com/mini/pilot/springboot/domain/QBaseTimeEntity.java
+ com.mini.pilot.springboot.domain.QBaseTimeEntity
+com/mini/pilot/springboot/config/QuerydslConfiguration.java
+ com.mini.pilot.springboot.config.QuerydslConfiguration
 com/mini/pilot/springboot/web/IndexController.java
  com.mini.pilot.springboot.web.IndexController
+com/mini/pilot/springboot/web/dto/CustomerListResponseDto.java
+ com.mini.pilot.springboot.web.dto.CustomerListResponseDto
+com/mini/pilot/springboot/web/SktserviceApiController.java
+ com.mini.pilot.springboot.web.SktserviceApiController

@@ -1,5 +1,8 @@
 package com.mini.pilot.springboot.domain.customer;
 
+import com.mini.pilot.springboot.domain.sktservice.Sktservice;
+import com.mini.pilot.springboot.domain.sktservice.SktserviceRepository;
+import org.apache.catalina.util.CustomObjectInputStream;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -12,6 +15,9 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import static org.hamcrest.CoreMatchers.is;
+
+
 @ExtendWith(SpringExtension.class) //junit4에서는 @RunWith(SpringRunner.class)
 //별다른 설정없이 @SpringBootTest를 사용할 경우, H2 데이터베이스를 자동으로 실행해줌
 @SpringBootTest
@@ -19,6 +25,10 @@ public class CustomerRepositoryTest {
 
     @Autowired
     CustomerRepository customerRepository;
+    @Autowired
+    SktserviceRepository sktserviceRepository;
+    @Autowired
+    CustomerQueryRepository customerQueryRepository;
 
     // Junit에서는 단위테스트가 끝날 때마다 수행되는 메소드를 지정,
     // 테스트용 db인 h2에 데이터가 그대로 남아 있어 다음 테스트 실행시 테스트가 실패할 수 있음
@@ -72,6 +82,44 @@ public class CustomerRepositoryTest {
         assertThat(customer.getModifiedDate()).isAfter(now);
 
     }
+
+    @Test
+    public void querydsl_기본_기능_확인2() {
+        //given
+        String customername = "홍길동";
+        int age = 10;
+        customerRepository.save(new Customer(customername, age));
+        //when
+        Customer customer = customerQueryRepository.findByName(customername).get(0);
+
+        //then
+        assertThat(customer.getCustomername()).isEqualTo(customername);
+        assertThat(customer.getAge()).isEqualTo(age);
+
+
+    }
+
+    @Test
+    public void 관계없을때_조인_맺기(){
+        //given
+        String customername = "홍길동";
+        int age = 10;
+        customerRepository.save(new Customer(customername, age));
+
+        String svcnum = "01012345678" ;
+        Long customerid = Long.valueOf(1);
+        sktserviceRepository.save(new Sktservice(svcnum, customerid)) ;
+
+        Customerinfo customerinfo = customerQueryRepository.findCustomerinfoByName("customername").get(0) ;
+
+        //then
+        assertThat(customerinfo.getCustomername()).isEqualTo(customername);
+        assertThat(customerinfo.getAge()).isEqualTo(age);
+        assertThat(customerinfo.getSvcnum()).isEqualTo(svcnum);
+        assertThat(customerinfo.getCustomername()).isEqualTo(customername);
+
+    }
+
 
 }
 

@@ -9,6 +9,7 @@ public interface CustomerRepository extends JpaRepository<Customer,Long>{
 
     @Query("SELECT p FROM Customer p ORDER BY p.id DESC")
     List<Customer> findAllDesc();
+
 }
 
 

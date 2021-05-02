@@ -2,10 +2,7 @@ package com.mini.pilot.springboot.web;
 
 
 import com.mini.pilot.springboot.service.CustomerService;
-import com.mini.pilot.springboot.web.dto.CustomerListResponseDto;
-import com.mini.pilot.springboot.web.dto.CustomerResponseDto;
-import com.mini.pilot.springboot.web.dto.CustomerSaveRequestDto;
-import com.mini.pilot.springboot.web.dto.CustomerUpdateRequestDto;
+import com.mini.pilot.springboot.web.dto.*;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -33,6 +30,12 @@ public class CustomerApiController {
         return customerService.findById(id);
     }
 
+
+    @GetMapping("/api/v1/customer/{customername}/search")
+    public List<CustomerListResponseDto>  findByName(@PathVariable String customername){
+        return customerService.findByName(customername);
+    }
+
     @GetMapping("/api/v1/customer/list")
     public List<CustomerListResponseDto> findAll(){
         return customerService.findAllDesc();
@@ -42,6 +45,11 @@ public class CustomerApiController {
     public Long delete(@PathVariable Long id ){
         customerService.delete(id);
         return id;
+    }
+
+    @GetMapping("/api/v1/customer/{customername}/searchinfo")
+    public List<CustomerInfoListResponseDto>  findCustomerinfoByName(@PathVariable String customername){
+        return customerService.findCustomerinfoByName(customername);
     }
 
 }

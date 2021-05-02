@@ -14,8 +14,6 @@ var main = {
         });
 
 
-
-
         $('#btn-save-service').on('click', function () {
              _this.saveService();
         });
@@ -26,6 +24,14 @@ var main = {
              _this.deleteService();
         });
 
+
+        $('#btn-search').on('click', function () {
+            _this.search();
+        });
+
+        $('#btn-search-info').on('click', function () {
+            _this.searchInfo();
+        });
 
     },
     save : function () {
@@ -134,6 +140,39 @@ var main = {
             }).done(function() {
                 alert('서비스정보가 삭제되었습니다.');
                 window.location.href = '/';
+            }).fail(function (error) {
+                alert(JSON.stringify(error));
+            });
+    },
+    search : function () {
+            //var customername = document.getElementById("customername").value;
+            var customername = $("#customername").val();
+
+            $.ajax({
+                type: 'GET',
+                url: '/api/v1/customer/'+ customername +'/search',
+                dataType: 'json',
+                contentType:'application/json; charset=utf-8'
+            }).done(function() {
+                window.location.href = '/'+'customer/'+ customername +'/search';
+                alert('고객정보가 조회되었습니다.' );
+
+            }).fail(function (error) {
+                alert(JSON.stringify(error));
+            });
+    },
+    searchInfo : function () {
+            var customername = $("#customername").val();
+
+            $.ajax({
+                type: 'GET',
+                url: '/api/v1/customer/'+ customername +'/searchinfo',
+                dataType: 'json',
+                contentType:'application/json; charset=utf-8'
+            }).done(function() {
+                window.location.href = '/'+'customer/'+ customername +'/searchinfo';
+                alert('고객님의 서비스정보가 조회되었습니다.' );
+
             }).fail(function (error) {
                 alert(JSON.stringify(error));
             });
