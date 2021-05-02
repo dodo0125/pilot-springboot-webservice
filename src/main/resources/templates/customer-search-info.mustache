@@ -1,0 +1,39 @@
+{{>layout/header}}
+<h1>고객 서비스 정보 검색</h1>
+<h6>고객의 서비스 정보를 검색하려면, 고객명을 입력하세요.</h6>
+<div class = "col-mid-12">
+    <div class = "row">
+        <div class = "col-md-6">
+            <div class = "form-group" >
+                <input type = "text" class = "form-control"
+                       id = "customername" placeholder="고객명" style="width:400px; display: inline;" >
+                <button type = "button" class ="btn btn-primary" id = "btn-search-info">조회</button>
+                <a href = "/" role ="button" class = "btn btn-secondary">홈으로</a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- 고객정보 목록 출력 영역 -->
+    <table class = "table table-horizontal table-bordered">
+        <thead class = "thead-strong">
+        <tr>
+            <th>고객명</th>
+            <th>나이</th>
+            <th>서비스번호</th>
+            <th>고객ID</th>
+        </tr>
+        </thead>
+        <tbody id ="tbody">
+        {{#customerinfo}}
+            <tr>
+                <td>{{customername}}</td>
+                <td>{{age}}</td>
+                <td>{{svcnum}}</td>
+                <td>{{customerid}}</td>
+            </tr>
+        {{/customerinfo}}
+        </tbody>
+    </table>
+    <br>
+</div>
+{{>layout/footer}}

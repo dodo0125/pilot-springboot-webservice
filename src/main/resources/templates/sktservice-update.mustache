@@ -1,0 +1,23 @@
+{{>layout/header}}
+<h1>서비스정보 수정</h1>
+
+<div class = "col-md-12">
+    <div class = "col-md-4">
+        <form>
+            <div class = "form-group">
+                <lable for ="svcnum">서비스번호</lable>
+                <input type = "text" class = "form-control"
+                       id="svcnum" value="{{sktservice.svcnum}}" >
+            </div>
+            <div class = "form-group">
+                <lable for ="customerid">고객ID</lable>
+                <input type = "number" class = "form-control"
+                       id="customerid" value="{{sktservice.customerid}}" readonly >
+            </div>
+        </form>
+        <a href = "/" role ="button" class = "btn btn-secondary">취소</a>
+        <button type = "button" class ="btn btn-primary" id = "btn-update-service">수정완료</button>
+        <button type = "button" class ="btn btn-danger" id = "btn-delete-service">삭제</button>
+    </div>
+</div>
+{{>layout/footer}}
