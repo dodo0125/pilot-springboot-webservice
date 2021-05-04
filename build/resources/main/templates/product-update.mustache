@@ -1,0 +1,28 @@
+{{>layout/header}}
+<h1>상품 정보 수정</h1>
+
+<div class = "col-md-12">
+    <div class = "col-md-4">
+        <form>
+            <div class = "form-group">
+                <lable for ="productid">상품ID</lable>
+                <input type = "text" class = "form-control"
+                       id="productid" value="{{product.productid}}" readonly>
+            </div>
+            <div class = "form-group">
+                <lable for ="productname">고객명</lable>
+                <input type = "text" class = "form-control"
+                       id="productname" value="{{product.productname}}" readonly>
+            </div>
+            <div class = "form-group">
+                <label for ="fee">금액</label>
+                <input type = "number" class = "form-control" id = "fee"
+                       value = "{{product.fee}}" >
+            </div>
+        </form>
+        <a href = "/" role ="button" class = "btn btn-secondary">취소</a>
+        <button type = "button" class ="btn btn-primary" id = "btn-update-product">수정완료</button>
+        <button type = "button" class ="btn btn-danger" id = "btn-delete">삭제</button>
+    </div>
+</div>
+{{>layout/footer}}
