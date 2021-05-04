@@ -9,13 +9,23 @@ com/mini/pilot/springboot/web/dto/CustomerUpdateRequestDto.java
 com/mini/pilot/springboot/web/dto/CustomerSaveRequestDto.java
  com.mini.pilot.springboot.web.dto.CustomerSaveRequestDto
  com.mini.pilot.springboot.web.dto.CustomerSaveRequestDto$CustomerSaveRequestDtoBuilder
+com/mini/pilot/springboot/domain/product/ProductRepository.java
+ com.mini.pilot.springboot.domain.product.ProductRepository
+com/mini/pilot/springboot/web/dto/ProductSaveRequestDto.java
+ com.mini.pilot.springboot.web.dto.ProductSaveRequestDto
+ com.mini.pilot.springboot.web.dto.ProductSaveRequestDto$ProductSaveRequestDtoBuilder
 com/mini/pilot/springboot/domain/customer/Customer.java
  com.mini.pilot.springboot.domain.customer.Customer
  com.mini.pilot.springboot.domain.customer.Customer$CustomerBuilder
+com/mini/pilot/springboot/web/dto/SubscribeResponseDto.java
+ com.mini.pilot.springboot.web.dto.SubscribeResponseDto
 com/mini/pilot/springboot/Application.java
  com.mini.pilot.springboot.Application
 com/mini/pilot/springboot/domain/sktservice/QSktservice.java
  com.mini.pilot.springboot.domain.sktservice.QSktservice
+com/mini/pilot/springboot/web/dto/SubscribeSaveRequestDto.java
+ com.mini.pilot.springboot.web.dto.SubscribeSaveRequestDto
+ com.mini.pilot.springboot.web.dto.SubscribeSaveRequestDto$SubscribeSaveRequestDtoBuilder
 com/mini/pilot/springboot/web/dto/CustomerResponseDto.java
  com.mini.pilot.springboot.web.dto.CustomerResponseDto
 com/mini/pilot/springboot/web/CustomerApiController.java
@@ -31,25 +41,58 @@ com/mini/pilot/springboot/service/SktserviceService.java
  com.mini.pilot.springboot.service.SktserviceService
 com/mini/pilot/springboot/domain/customer/CustomerRepository.java
  com.mini.pilot.springboot.domain.customer.CustomerRepository
+com/mini/pilot/springboot/domain/product/Product.java
+ com.mini.pilot.springboot.domain.product.Product
+ com.mini.pilot.springboot.domain.product.Product$ProductBuilder
+com/mini/pilot/springboot/domain/product/SubscribeRepository.java
+ com.mini.pilot.springboot.domain.product.SubscribeRepository
 com/mini/pilot/springboot/service/CustomerService.java
  com.mini.pilot.springboot.service.CustomerService
+com/mini/pilot/springboot/web/dto/SubscribeListResponseDto.java
+ com.mini.pilot.springboot.web.dto.SubscribeListResponseDto
 com/mini/pilot/springboot/domain/BaseTimeEntity.java
  com.mini.pilot.springboot.domain.BaseTimeEntity
+com/mini/pilot/springboot/domain/product/SubscribeQueryRepository.java
+ com.mini.pilot.springboot.domain.product.SubscribeQueryRepository
+com/mini/pilot/springboot/web/dto/SubscribeInfoListResponseDto.java
+ com.mini.pilot.springboot.web.dto.SubscribeInfoListResponseDto
+com/mini/pilot/springboot/domain/product/Subscribe.java
+ com.mini.pilot.springboot.domain.product.Subscribe
+ com.mini.pilot.springboot.domain.product.Subscribe$SubscribeBuilder
 com/mini/pilot/springboot/domain/customer/Customerinfo.java
  com.mini.pilot.springboot.domain.customer.Customerinfo
+com/mini/pilot/springboot/web/dto/ProductUpdateRequestDto.java
+ com.mini.pilot.springboot.web.dto.ProductUpdateRequestDto
+ com.mini.pilot.springboot.web.dto.ProductUpdateRequestDto$ProductUpdateRequestDtoBuilder
 com/mini/pilot/springboot/domain/sktservice/SktserviceRepository.java
  com.mini.pilot.springboot.domain.sktservice.SktserviceRepository
 com/mini/pilot/springboot/web/dto/SktserviceUpdateRequestDto.java
  com.mini.pilot.springboot.web.dto.SktserviceUpdateRequestDto
  com.mini.pilot.springboot.web.dto.SktserviceUpdateRequestDto$SktserviceUpdateRequestDtoBuilder
+com/mini/pilot/springboot/web/dto/ProductResponseDto.java
+ com.mini.pilot.springboot.web.dto.ProductResponseDto
+com/mini/pilot/springboot/web/dto/ProductListResponseDto.java
+ com.mini.pilot.springboot.web.dto.ProductListResponseDto
 com/mini/pilot/springboot/domain/customer/QCustomer.java
  com.mini.pilot.springboot.domain.customer.QCustomer
 com/mini/pilot/springboot/domain/customer/CustomerQueryRepository.java
  com.mini.pilot.springboot.domain.customer.CustomerQueryRepository
+com/mini/pilot/springboot/domain/product/Subscribeinfo.java
+ com.mini.pilot.springboot.domain.product.Subscribeinfo
 com/mini/pilot/springboot/domain/QBaseTimeEntity.java
  com.mini.pilot.springboot.domain.QBaseTimeEntity
+com/mini/pilot/springboot/service/ProductService.java
+ com.mini.pilot.springboot.service.ProductService
 com/mini/pilot/springboot/config/QuerydslConfiguration.java
  com.mini.pilot.springboot.config.QuerydslConfiguration
+com/mini/pilot/springboot/service/SubscribeService.java
+ com.mini.pilot.springboot.service.SubscribeService
+com/mini/pilot/springboot/web/ProductApiController.java
+ com.mini.pilot.springboot.web.ProductApiController
+com/mini/pilot/springboot/domain/product/QSubscribe.java
+ com.mini.pilot.springboot.domain.product.QSubscribe
+com/mini/pilot/springboot/domain/product/QProduct.java
+ com.mini.pilot.springboot.domain.product.QProduct
 com/mini/pilot/springboot/web/IndexController.java
  com.mini.pilot.springboot.web.IndexController
 com/mini/pilot/springboot/web/dto/CustomerListResponseDto.java

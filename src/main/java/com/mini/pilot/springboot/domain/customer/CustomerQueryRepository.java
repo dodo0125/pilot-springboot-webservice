@@ -30,6 +30,7 @@ public class CustomerQueryRepository {
                         sktservice.customerid.as("customerid")
                 ))
                 .from(customer)
+                .where(customer.customername.eq(customername))
                 .join(sktservice).on(customer.id.eq(sktservice.customerid))
                 .fetch();
     }

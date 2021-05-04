@@ -2,9 +2,12 @@ package com.mini.pilot.springboot.web;
 
 import com.mini.pilot.springboot.domain.sktservice.Sktservice;
 import com.mini.pilot.springboot.service.CustomerService;
+import com.mini.pilot.springboot.service.ProductService;
 import com.mini.pilot.springboot.service.SktserviceService;
+import com.mini.pilot.springboot.service.SubscribeService;
 import com.mini.pilot.springboot.web.dto.CustomerListResponseDto;
 import com.mini.pilot.springboot.web.dto.CustomerResponseDto;
+import com.mini.pilot.springboot.web.dto.ProductResponseDto;
 import com.mini.pilot.springboot.web.dto.SktserviceResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -20,11 +23,14 @@ public class IndexController {
 
     private final CustomerService customerService;
     private final SktserviceService sktserviceService;
+    private final ProductService productService;
+    private final SubscribeService subscribeService;
 
     @GetMapping("/")
     public String index(Model model){
         model.addAttribute("customer", customerService.findAllDesc());
         model.addAttribute("sktservice", sktserviceService.findAllDesc());
+        model.addAttribute("product", productService.findAllDesc());
         return "index";
     }
 
@@ -80,6 +86,38 @@ public class IndexController {
         return "customer-search-info";
     }
 
+
+    @GetMapping("/product/save")
+    public String productSave() {
+        return "product-save";
+    }
+
+    @GetMapping("/product/update/{productid}")
+    public String productUpdate(@PathVariable Long productid, Model model){
+        ProductResponseDto dto = productService.findById( productid );
+        model.addAttribute("product",dto);
+
+        return "product-update";
+    }
+
+
+    @GetMapping("/subscribe/save")
+    public String subscribeSave() {
+        return "subscribe-save";
+    }
+
+    @GetMapping("/subscribe/search")
+    public String subscribeSearch(){
+        return "subscribe-search";
+    }
+
+
+    @GetMapping("/subscribe/{serviceid}/search")
+    public String subscribeSearchServiceId(@PathVariable Long serviceid, Model model){
+        model.addAttribute("subscribeinfo", subscribeService.findSubscribeInfoByServiceId(serviceid) );
+
+        return "subscribe-search";
+    }
 
 
 }

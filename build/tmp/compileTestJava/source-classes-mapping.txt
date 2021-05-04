@@ -1,5 +1,9 @@
 com/mini/pilot/springboot/domain/customer/CustomerRepositoryTest.java
  com.mini.pilot.springboot.domain.customer.CustomerRepositoryTest
+com/mini/pilot/springboot/domain/product/SubscribeRepositoryTest.java
+ com.mini.pilot.springboot.domain.product.SubscribeRepositoryTest
+com/mini/pilot/springboot/domain/product/ProductRepositoryTest.java
+ com.mini.pilot.springboot.domain.product.ProductRepositoryTest
 com/mini/pilot/springboot/domain/sktservice/SktserviceRepositoryTest.java
  com.mini.pilot.springboot.domain.sktservice.SktserviceRepositoryTest
 com/mini/pilot/springboot/web/CustomerApiControllerTest.java
@@ -8,3 +12,5 @@ com/mini/pilot/springboot/web/IndexControllerTest.java
  com.mini.pilot.springboot.web.IndexControllerTest
 com/mini/pilot/springboot/web/SktserviceApiControllerTest.java
  com.mini.pilot.springboot.web.SktserviceApiControllerTest
+com/mini/pilot/springboot/web/ProductApiControllerTest.java
+ com.mini.pilot.springboot.web.ProductApiControllerTest

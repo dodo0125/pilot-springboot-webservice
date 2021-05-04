@@ -33,6 +33,27 @@ var main = {
             _this.searchInfo();
         });
 
+
+
+        $('#btn-save-product').on('click', function () {
+             _this.saveProduct();
+        });
+        $('#btn-update-product').on('click', function () {
+             _this.updateProduct();
+        });
+        $('#btn-delete-product').on('click', function () {
+             _this.deleteProduct();
+        });
+
+
+        $('#btn-save-subscribe').on('click', function () {
+             _this.saveSubscribe();
+        });
+        $('#btn-search-subscribe').on('click', function () {
+             _this.searchSubscribe();
+        });
+
+
     },
     save : function () {
         var data = {
@@ -176,8 +197,97 @@ var main = {
             }).fail(function (error) {
                 alert(JSON.stringify(error));
             });
-    }
+    },
+    saveProduct : function () {
+        var data = {
+                productname: $('#productname').val(),
+                fee: $('#fee').val()
+            };
 
+            $.ajax({
+                type: 'POST',
+                url: '/api/v1/product',
+                dataType: 'json',
+                contentType:'application/json; charset=utf-8',
+                data: JSON.stringify(data)
+            }).done(function() {
+               alert('신규 상품이 등록되었습니다.');
+               window.location.href = '/';
+            }).fail(function (error) {
+               alert(JSON.stringify(error));
+            });
+    },
+    updateProduct : function () {
+        var data = {
+            productname: $('#productname').val(),
+            fee: $('#fee').val()
+            };
+
+            var productid = $('#productid').val();
+
+            $.ajax({
+                type: 'PUT',
+                url: '/api/v1/product/'+productid,
+                dataType: 'json',
+                contentType:'application/json; charset=utf-8',
+                data: JSON.stringify(data)
+            }).done(function() {
+                alert('상품정보가 수정되었습니다.');
+                window.location.href = '/';
+            }).fail(function (error) {
+                alert(JSON.stringify(error));
+            });
+    },
+    deleteProduct : function () {
+        var id = $('#productid').val();
+
+            $.ajax({
+                type: 'DELETE',
+                url: '/api/v1/product/'+productid,
+                dataType: 'json',
+                contentType:'application/json; charset=utf-8'
+            }).done(function() {
+                alert('상품정보가 삭제되었습니다.');
+                window.location.href = '/';
+            }).fail(function (error) {
+                alert(JSON.stringify(error));
+            });
+    },
+    saveSubscribe : function () {
+        var data = {
+                productid: $('#productid').val(),
+                serviceid: $('#serviceid').val()
+            };
+
+            $.ajax({
+                type: 'POST',
+                url: '/api/v1/subscribe',
+                dataType: 'json',
+                contentType:'application/json; charset=utf-8',
+                data: JSON.stringify(data)
+            }).done(function() {
+               alert('상품이 가입 완료되었습니다.');
+               window.location.href = '/';
+            }).fail(function (error) {
+               alert(JSON.stringify(error));
+            });
+    },
+    searchSubscribe : function () {
+                var serviceid = $("#serviceid").val();
+
+                $.ajax({
+                    type: 'GET',
+                    url: '/api/v1/subscribe/'+ serviceid +'/search',
+                    dataType: 'json',
+                    contentType:'application/json; charset=utf-8'
+                }).done(function() {
+                    window.location.href = '/'+'subscribe/'+ serviceid +'/search';
+                    alert('고객님의 상품 가입정보가 조회되었습니다.' );
+
+                }).fail(function (error) {
+                    alert(JSON.stringify(error));
+                });
+    }
 };
 
 main.init();
